@@ -1,0 +1,58 @@
+
+
+
+<div class="container">
+    <table border=1 style="text-align: center">
+        <tr >
+          <th> ProductID</th>  
+          <th>Product Name</th> 
+          <th>Product Price</th>     
+          <th>Product Description</th>  
+          <th>product status</th>
+          <th>WishList</th>
+          
+        
+    
+        </tr>
+        <tr *ngFor="let p of products;let i=index">
+          <td>{{p.productId}}</td>     
+          <td>{{p.productName}}</td>
+          <td>{{p.productPrice}}</td>
+          <td>{{p.productDescription}}</td>
+          <td>{{p.productStatus}}</td>
+          
+ <td><button class="btn btn-warning" id="addButton" (click)="clickOnWishlist(i)" >ADDTOWISHIST</button></td> 
+          </tr>
+          
+    </table>
+    <br>
+          <br>
+    <div class="col-sm-9 col-sm-offset-3">
+      <button class="btn btn-block btn-success" id="btnMyList" (click)="myList()">MyWishList</button></div>
+  </div>
+  <br>
+  <br>
+  <div class="container">
+    <table border=1 style="text-align: center">
+        <tr >
+          <th> Product Name</th>  
+          <th>Product Price</th>
+          <th>CustomerId</th>
+          <th>ProductId</th>
+          <th>Cart</th>
+       </tr>
+        <tr *ngFor="let w of list;let i=index">
+          <td>{{w.productId.productName}}</td>        <!--String Interpolation-->
+          <td>{{w.productId.productPrice}}</td>
+          <td>{{w.customerId.customerId}}</td>
+          <td>{{w.productId.productId}}</td>
+          
+       
+          <td><button class="btn btn-warning"  >ADDTOCART</button></td> 
+          </tr>
+          
+    </table>
+    </div>
+
+
+    
